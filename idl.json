@@ -1,0 +1,385 @@
+{
+  "version": "0.1.0",
+  "name": "stake",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "stakeDbAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakePoolAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakePoolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rewardPoolAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rewardPoolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "genesisAdmin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "stake",
+      "accounts": [
+        {
+          "name": "stakeDbAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenStakeAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenStakeAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "stakeRewardAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "staker",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "stakeDuration",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "unStake",
+      "accounts": [
+        {
+          "name": "stakeDbAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenStakeAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenStakeAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakeRewardAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakePoolAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakePoolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "genesisAdmin",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "staker",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "clock",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "distributeStakeReward",
+      "accounts": [
+        {
+          "name": "stakeDbAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakePoolAuthority",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "stakePoolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rewardPoolAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rewardPoolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "genesisAdmin",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claimStakeReward",
+      "accounts": [
+        {
+          "name": "stakeDbAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rewardPoolAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rewardPoolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "genesisAdmin",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "stakeRewardAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenStakeAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "staker",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "StakeDbAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "stakeList",
+            "type": {
+              "vec": {
+                "defined": "StakeInfo"
+              }
+            }
+          },
+          {
+            "name": "metaData",
+            "type": {
+              "defined": "StakePoolMetaData"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "StakeInfo",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "stakeAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "rewardAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeAddressAuthority",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeSigner",
+            "type": "publicKey"
+          },
+          {
+            "name": "stakeAmount",
+            "type": "u64"
+          },
+          {
+            "name": "availableStakeClaim",
+            "type": "u64"
+          },
+          {
+            "name": "stakeTs",
+            "type": "i64"
+          },
+          {
+            "name": "stakeDuration",
+            "type": "u16"
+          },
+          {
+            "name": "acState",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StakePoolMetaData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "previousEpoch",
+            "type": "u32"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidStakeAmount",
+      "msg": "Invalid Min Stake Amount"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidTokenMint",
+      "msg": "Invalid Token Mint"
+    },
+    {
+      "code": 6002,
+      "name": "InvalidAtaAuthority",
+      "msg": "Invalid Token account authority"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidStakeState",
+      "msg": "Invalid Stake State"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidStakeReference",
+      "msg": "Invalid Stake Reference"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidUnStakeSigner",
+      "msg": "Invalid Stake Signer"
+    }
+  ]
+}
